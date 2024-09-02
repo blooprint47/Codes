@@ -1,0 +1,32 @@
+//https://codeforces.com/contest/31/problem/A
+#include <bits/stdc++.h>
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+using namespace std;
+int const N=1e5 + 5;
+int n;
+int worms[100];
+int a[N];
+int main() {
+    A7MAD
+    scanf("%d",&n);
+    for(int i=0;i<n;i++) {
+        scanf("%d",&worms[i]);
+    }
+    for(int i=0;i<n;i++) {
+        for(int j=0;j<n;j++) {
+            if(i==j)
+                continue;
+            for(int k=0;k<n;k++) {
+                if(k!=i && k!=j && worms[i]+worms[j]==worms[k]) {
+                    printf("%d %d %d\n",k+1,j+1,i+1);
+                    return 0;
+                }
+            }
+        }
+    }
+        puts("-1");
+
+        return 0;
+
+}
+//easy shi
