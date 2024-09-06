@@ -1,0 +1,33 @@
+// https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/J
+
+#include <bits/stdc++.h>
+#include <iomanip>
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+typedef long long ll;
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+using namespace std;
+int const N=1e6 + 5;
+int n;
+
+//char s[N];
+int main() {
+    A7MAD
+    string s;cin>>s;
+    int len=s.length();
+    int freq[26]{0};
+
+    for(int i=0;i<len;i++) {
+        freq[s[i]-'a']++;
+    }
+
+    for(int i=0;i<26;i++) {
+        if(freq[i]!=0){
+            char ch=i+'a';
+            cout<<ch<<" : "<<freq[i]<<endl;
+        }
+    }
+        return 0;
+
+}
+//easy shi
