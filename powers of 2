@@ -1,0 +1,45 @@
+//problem: https://codeforces.com/group/9qRzeL0CPR/contest/551872/problem/A
+
+#include <bits/stdc++.h>
+#include <iomanip>
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+#define all(v) v.begin(), v.end()
+typedef long long ll;
+struct Node {
+    int data;
+    Node *l=nullptr,*r=nullptr;
+};
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+using namespace std;
+bool ispower(ll i) {
+    while (i % 2 == 0) {
+        i /= 2;
+    }
+    return i == 1;
+}
+
+int main() {
+    A7MAD
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+#endif
+
+
+    int t;cin>>t;
+    while(t--) {
+        ll n;cin>>n;
+        ll sum=n*(n+1)/2;
+        int power=1;
+        while(power<=n) {
+            power*=2;
+            sum-=power;
+        }
+        cout<<sum<<endl;
+    }
+
+
+    return 0;
+}
+//easy shi
