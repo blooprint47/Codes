@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+#include <iomanip>
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+#define all(v) v.begin(), v.end()
+typedef long long ll;
+struct Node {
+    int data;
+    Node *l=nullptr,*r=nullptr;
+};
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+using namespace std;
+bool ispower(ll i) {
+    if (i <= 0) return false;
+    while (i % 2 == 0) {
+        i /= 2;
+    }
+    return i == 1;
+}
+bool isprime(ll n) {
+    if (n <= 1) return false;
+    if(n<=3) return true;
+    if(n%2==0 || n%3 == 0) return false;
+    for (long long i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    A7MAD
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+#endif
+
+    ll a,b;cin>>a>>b;
+    if(a>b)
+        swap(a,b);
+    ll sumb=b*(b+1)/2; //sum from 1 to b
+    ll suma=a*(a-1)/2; //sum from 1 to a-1
+    cout<<sumb-suma<<endl;
+
+
+    ll start,sumEven=0;
+    if(a%2==0)
+        start=a;
+    else
+        start=a+1;
+    for (int i = start; i <= b; i += 2) {
+        sumEven+=i;
+    }
+    cout<<sumEven<<endl;
+
+
+    ll start2,sumOdd=0;
+    if(a%2==1)
+        start=a;
+    else
+        start=a+1;
+    for (int i = start; i <= b; i += 2) {
+        sumOdd+=i;
+    }
+    cout<<sumOdd<<endl;
+
+
+    return 0;
+}
+//easy shi
