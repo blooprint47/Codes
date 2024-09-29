@@ -33,7 +33,7 @@ int main() {
         auto x=st.top();
         st.pop();
 
-        if(visited.find(x)!=visited.end())
+        if(visited.find(x)!=visited.end())   // if the string was printed, then continue.
             continue;
 
         visited.insert(x);
