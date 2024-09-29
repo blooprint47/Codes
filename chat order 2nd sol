@@ -1,0 +1,45 @@
+//https://codeforces.com/problemset/problem/637/B
+
+//This solution uses a set of strings and its find() function
+
+#include <bits/stdc++.h>
+#include <iomanip>
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+#define all(v) v.begin(), v.end()
+typedef long long ll;
+struct Node {
+    int data;
+    Node *l=nullptr,*r=nullptr;
+};
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+using namespace std;
+
+int main() {
+    A7MAD
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+#endif
+
+    int n;cin>>n;
+    stack<string> st;
+    map<string,bool> visited;
+    while(n--){
+        string s;cin>>s;
+        st.push(s);
+    }
+    while(!st.empty()){
+        auto x=st.top();
+        st.pop();
+
+        if(visited.find(x)!=visited.end())
+            continue;
+
+        visited.insert(x);
+        cout<<x<<endl;
+    }
+
+    return 0;
+}
+//easy shi
