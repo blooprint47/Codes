@@ -1,0 +1,33 @@
+https://codeforces.com/problemset/problem/313/B
+
+#include <bits/stdc++.h>
+#define tes int test=0;cin>>test;while(test--)
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+typedef long long ll;
+using namespace std;
+
+int main() {
+    A7MAD
+
+    string s;cin>>s;
+    int n=s.size();
+    s='.'+s;
+    int f[n+1]={}; //an array of 0s and 1s 
+
+        for(int i=1;i<=n;i++){
+            f[i]=(s[i]==s[i+1]); //here we check if the element i == i+1, if it does f[i]=1 else f[i]=0
+        }
+        int p[n+1]={};
+        for(int i=1;i<=n;i++){
+            p[i]=p[i-1]+f[i];
+        }
+        int q;cin>>q;
+        while(q--){
+            int l,r;cin>>l>>r;
+            cout<<p[r]-p[l-1]-f[r]<<endl; //I don't want the right cuz its the last element and it doesn't have a next element
+        }
+
+
+    return 0;
+}
+//easy shi
