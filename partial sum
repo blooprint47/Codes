@@ -1,0 +1,39 @@
+//https://codeforces.com/group/wNS3GwuHOE/contest/435607/problem/E
+
+#include <bits/stdc++.h>
+#include <iomanip>
+#define YES cout<<"YES"<<endl
+#define NO cout<<"NO"<<endl
+#define all(v) v.begin(), v.end()
+typedef long long ll;
+
+
+
+int main() {
+    A7MAD
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+#endif
+
+    int n,q;cin>>n>>q;
+    ll s[n+2]={};
+    for(int i=1;i<=n;i++) {
+        cin>>s[i];
+    }
+    ll par[n+2]={};
+    while(q--) {
+        ll l,r,val;cin>>l>>r>>val;
+        par[l]+=val;
+        par[r+1]-=val;
+    }
+    for(int i=1;i<=n;i++) {
+        par[i]+=par[i-1];
+    }
+    for(int i=1;i<=n;i++) {
+        cout<<s[i]+par[i]<<' ';
+    }
+
+    return 0;
+}
+//easy shi
