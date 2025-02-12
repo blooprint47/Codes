@@ -1,0 +1,46 @@
+//  solution for:  https://codeforces.com/group/c3FDl9EUi9/contest/262795/problem/K  USING OOP
+
+#include <bits/stdc++.h>
+#define tes int test=0;cin>>test;while(test--)
+#define A7MAD ios_base::sync_with_stdio(NULL); cin.tie(0); cout.tie(0);
+typedef long long ll;
+using namespace std;
+
+struct person{
+
+    string name;
+    int salary;
+
+    bool operator<(const person &other)const
+    {
+        if(salary==other.salary) return name<other.name;
+        return salary>other.salary;
+    }
+};
+
+int main() {
+    A7MAD
+        int n;cin>>n;
+        person p[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>p[i].name>>p[i].salary;
+        }
+        sort(p,p+n);
+        for(auto it:p)
+            cout<<it.name<<' '<<it.salary<<'\n';
+     return 0;
+}
+//easy shi
+
+
+
+
+
+
+
+
+
+
+
+
